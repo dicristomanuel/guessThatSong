@@ -1,13 +1,18 @@
 
-  var songIds = [];
-  var current;
-  var count = 0;
+  var songIds = [],
+  	  current,
+  	  count = 0,
+  	  bgImage = "url(img/logo.png)",
+  	  firstRound = true;
+
+  $(".cover, .album").css("background-image", bgImage);
 
 function randSong() {
-    if (songIds.length === 0) {
+    if (songIds.length === 0 && firstRound) {
         songIds = ["866276963", "611171954", "495911814", "266211028", "901445412",
         "971648515", "904803519", "358822334", "502729174", "433399764", "844021161",
         "701329988"];
+        firstRound = false;
     }
     var rand = parseInt(Math.random() * songIds.length);
 		var playThis = 'http://itunes.apple.com/lookup?id=' + songIds[rand]; 
@@ -18,7 +23,7 @@ function randSong() {
  
 
 function playSong() {
-	$("#preview").trigger("pause");
+	// $("#preview").trigger("pause");
 	$.ajax({
 	   url: randSong(),
 	   jsonp: "callback",
@@ -26,7 +31,7 @@ function playSong() {
 					}).done(function(response) {
 						var previewTune = response.results[0].previewUrl;
 						var previewField = $("#preview");
-	   		previewField.attr("src", previewTune).trigger("play");
+	   		previewField.attr("src", previewTune)[0].play();
 	});//ajax
 }//playSong
 
@@ -42,6 +47,12 @@ $("input").on('keypress', function(evt) {
   var key = evt.which;
     if (key === 13) {
     	var userInput = $(this).val();
+
+    	if(songIds.length === 0) {
+    		//YOUR SCORE IS // GAME END
+				console.log("here");
+    	}
+
      	$.ajax({
 	   url: current,
 	   jsonp: "callback",
@@ -65,6 +76,9 @@ $("input").on('keypress', function(evt) {
 	   jsonp: "callback",
 	   dataType: "jsonp"
 					}).done(function(response) {
+					if (response.track.album === undefined) {
+						$(".cover, .album").css("background-image", bgImage);
+					}
 					var urlImg = response.track.album.image[3]["#text"];
 						$(".cover, .album").css("background-image", "url("+urlImg+")");
 	});//ajax
@@ -93,14 +107,14 @@ $("input").on('keypress', function(evt) {
 // https://itunes.apple.com/search?term=banks+goddess
 // http://itunes.apple.com/lookup?id="12312344"
 // $("#audio_preview").on("canplay", function() {
-//     $("#audio_preview")[0].play();
+//     $("#preview")[0].play();
 // });
 
-  var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=MyXoToD&api_key=d1f6b457c480c640ef7b43acdb0190f2&format=json";
-  $.getJSON(url, function(data) {
-    var artist = data.recenttracks.track[0].artist["#text"];
-    var track = data.recenttracks.track[0]["name"];
-    var cover = data.recenttracks.track[0].image[3]["#text"];
-    $(".cover, .album").css("background-image", "url("+cover+")");
+  // var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=MyXoToD&api_key=d1f6b457c480c640ef7b43acdb0190f2&format=json";
+  // $.getJSON(url, function(data) {
+  //   var artist = data.recenttracks.track[0].artist["#text"];
+  //   var track = data.recenttracks.track[0]["name"];
+  //   var cover = data.recenttracks.track[0].image[3]["#text"];
+  //   $(".cover, .album").css("background-image", "url("+cover+")");
 
-  });
+  // });
