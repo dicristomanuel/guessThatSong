@@ -30,9 +30,12 @@ function playSong() {
 	});//ajax
 }//playSong
 
-				$("#play").click(function(evt) {
-					evt.preventDefault();
+				$(".album").click(function() {
+					$(this).addClass("animated pulse");
 					playSong();
+					setTimeout(function() {
+								$(".album").removeClass("animated pulse");
+							},600)
 				})
 
 $("input").on('keypress', function(evt) {
@@ -48,27 +51,44 @@ $("input").on('keypress', function(evt) {
 						artistName = response.results[0].artistName.toLowerCase();
 						trackName = response.results[0].trackName.toLowerCase().split(" (")[0];
 
-						if(userInput === artistName || userInput === trackName) {
+						if(userInput === trackName) {
 							count += 1;
-							$("#count").html(count);
+							$(".count").html(count);
 								var image = $("<img>").attr("src", response.results[0].artworkUrl100)
-								console.log(response.results[0].artworkUrl100);
-								$(".current").append(image);
+								$(".track").html(trackName);
+								$(".artist").html(artistName);
+		
+		var urlLastFm = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=82bb5e61b53c9b302c8c33bb41cf822e&artist=" + artistName + "&track=" + trackName + "&format=json";
+
+								$.ajax({
+	   url: urlLastFm,
+	   jsonp: "callback",
+	   dataType: "jsonp"
+					}).done(function(response) {
+					var urlImg = response.track.album.image[3]["#text"];
+						$(".cover, .album").css("background-image", "url("+urlImg+")");
+	});//ajax
+
+
+								   $("input").val("");
+								   $(".album").addClass("animated pulse");
+
 								setTimeout(function(){
+									$(".album").removeClass("animated pulse");
   								playSong();
   							}, 1000);
 						} else {
+							$("input").val("");
+							$("input").addClass("animated shake");
 							setTimeout(function(){
+								$("input").removeClass("animated shake");
   								playSong();
   							}, 1000);
 						}
 	});//ajax
 
-
-
     }//ifStatement
 });//input.on'keypress'
-
 
 // https://itunes.apple.com/search?term=banks+goddess
 // http://itunes.apple.com/lookup?id="12312344"
@@ -76,15 +96,11 @@ $("input").on('keypress', function(evt) {
 //     $("#audio_preview")[0].play();
 // });
 
-
- $(document).ready(function() {
   var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=MyXoToD&api_key=d1f6b457c480c640ef7b43acdb0190f2&format=json";
   $.getJSON(url, function(data) {
     var artist = data.recenttracks.track[0].artist["#text"];
     var track = data.recenttracks.track[0]["name"];
     var cover = data.recenttracks.track[0].image[3]["#text"];
     $(".cover, .album").css("background-image", "url("+cover+")");
-    $(".track").html(track);
-    $(".artist").html(artist);
+
   });
-});

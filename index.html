@@ -2,15 +2,15 @@
 <html>
   <head lang="en">
   <meta char="UTF-8">
-  	<link rel="stylesheet" href="style.css">
-  		<link href="https://get.gridsetapp.com/33356/" rel="stylesheet" />
+   <link rel="stylesheet" href="css/style.css">
+  	<link rel="stylesheet" href="css/animate.css">
   
   <title>Guess that Song</title>
 </head>
 <body>
 
 
-<div id="count">5</div>
+<div class="count">0</div>
 
 <div class='cover'></div>
 <div class='protection'></div>
@@ -19,10 +19,11 @@
   <hr>
   <div class='track'></div>
   <div class='artist'></div>
-  <div class="ofInput"></div><input type="text">
+  <div class="ofInput"></div><input type="text" placeholder="Guess that Song">
   <hr>
 </div>
 
+<audio id="preview" src=""></audio>
 
 <!-- <div class="center L3 M3 S2"> -->
 <!-- 
@@ -32,12 +33,14 @@
 			<audio id="preview" src=""></audio>
 		<div class="current"></div> -->
 
+    <!-- <img src="img/play.png" id="play"> -->
+
 
 <!-- 
 
 <div id="count"></div> -->
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  	<script type="text/javascript" src="songs.js"></script>
+  	<script type="text/javascript" src="js/songs.js"></script>
 	</body>
 </html>

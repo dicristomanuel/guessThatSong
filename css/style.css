@@ -11,6 +11,22 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+/*#play {
+  position: absolute;
+  opacity: .7;
+  z-index: 3;
+  width: 8%;
+  top: 90%;
+  left: 85%;
+  background-color: white;
+  padding: 2px 2px;
+  border-radius: 5px;
+}
+
+#play:hover {
+  opacity: .2;
+}*/
+
 
 input {
   position: relative;
@@ -39,20 +55,20 @@ input {
   -webkit-box-shadow: -1px 11px 21px -12px rgba(0,0,0,0.75);
 }
 
-#count {
+.count {
   position: absolute;
   font-size: 25px;
   z-index: 2;
   left: 50%;
   margin-left: -25px;
-  margin-top: 2%;
-  background-color: transparent;
+  margin-top: 2.5%;
+  background-color: white;
   width: 40px;
   height: 40px;
   text-align: center;
   border-radius: 100px;
   border: 1px solid white;
-  opacity: .5;
+  opacity: .3;
   padding-top: .15%;
   padding-left: .09%;
 }
