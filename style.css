@@ -1,9 +1,128 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:600,400,300);
 
-
-body {
-	text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-.center {
+body {
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
 
+
+input {
+  position: relative;
+  width: 80%;
+  opacity: .6;
+  margin-top: 5%;
+  margin-left: 7%;
+  padding: 15px 10px;
+  border-radius: 20px;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  background-color: transparent;
+}
+
+.ofInput {
+  width: 80%;
+  margin-top: 7%;
+  margin-left: 7%;
+  padding: 15px 10px;
+  border-radius: 20px;
+  background-color: white;
+  opacity: .1;
+  height: 2%;
+  position: absolute;
+  -webkit-box-shadow: -1px 11px 21px -12px rgba(0,0,0,0.75);
+}
+
+#count {
+  position: absolute;
+  font-size: 25px;
+  z-index: 2;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: 2%;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 100px;
+  border: 1px solid white;
+  opacity: .5;
+  padding-top: .15%;
+  padding-left: .09%;
+}
+
+
+.cover {
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -webkit-filter: blur(10px);
+  transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -webkit-box-shadow: -1px 11px 21px -12px rgba(0,0,0,0.75);
+}
+
+.protection {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.player {
+  width: 300px;
+  height: 481px;
+  position: absolute;
+  z-index: 2;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.player hr {
+  display: block;
+  margin: 39px 0 39px -10%;
+  height: 2px;
+  width: 120%;
+  background: #fff;
+}
+.player .album {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+.player .track {
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+.player .artist {
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  line-height: 20px;
 }

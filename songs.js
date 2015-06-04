@@ -56,11 +56,11 @@ $("input").on('keypress', function(evt) {
 								$(".current").append(image);
 								setTimeout(function(){
   								playSong();
-  							}, 2000);
+  							}, 1000);
 						} else {
 							setTimeout(function(){
   								playSong();
-  							}, 2000);
+  							}, 1000);
 						}
 	});//ajax
 
@@ -72,3 +72,19 @@ $("input").on('keypress', function(evt) {
 
 // https://itunes.apple.com/search?term=banks+goddess
 // http://itunes.apple.com/lookup?id="12312344"
+// $("#audio_preview").on("canplay", function() {
+//     $("#audio_preview")[0].play();
+// });
+
+
+ $(document).ready(function() {
+  var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=MyXoToD&api_key=d1f6b457c480c640ef7b43acdb0190f2&format=json";
+  $.getJSON(url, function(data) {
+    var artist = data.recenttracks.track[0].artist["#text"];
+    var track = data.recenttracks.track[0]["name"];
+    var cover = data.recenttracks.track[0].image[3]["#text"];
+    $(".cover, .album").css("background-image", "url("+cover+")");
+    $(".track").html(track);
+    $(".artist").html(artist);
+  });
+});
