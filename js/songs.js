@@ -11,19 +11,18 @@ function randSong() {
     if (songIds.length === 0 && firstRound) {
         songIds = ["866276963", "611171954", "495911814", "266211028", "901445412",
         "971648515", "904803519", "358822334", "502729174", "433399764", "844021161",
-        "701329988"];
+        "701329988", "947115236"];
         firstRound = false;
     }
     var rand = parseInt(Math.random() * songIds.length);
-		var playThis = 'http://itunes.apple.com/lookup?id=' + songIds[rand]; 
-		current = playThis;   
+		var playThis = 'http://itunes.apple.com/lookup?id=' + songIds[rand];
+		current = playThis;
 		songIds.splice(rand, 1);
     return playThis;
 }
- 
+
 
 function playSong() {
-	// $("#preview").trigger("pause");
 	$.ajax({
 	   url: randSong(),
 	   jsonp: "callback",
@@ -68,7 +67,7 @@ $("input").on('keypress', function(evt) {
 								var image = $("<img>").attr("src", response.results[0].artworkUrl100)
 								$(".track").html(trackName);
 								$(".artist").html(artistName);
-		
+
 		var urlLastFm = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=82bb5e61b53c9b302c8c33bb41cf822e&artist=" + artistName + "&track=" + trackName + "&format=json";
 
 								$.ajax({

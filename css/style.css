@@ -11,22 +11,6 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-/*#play {
-  position: absolute;
-  opacity: .7;
-  z-index: 3;
-  width: 8%;
-  top: 90%;
-  left: 85%;
-  background-color: white;
-  padding: 2px 2px;
-  border-radius: 5px;
-}
-
-#play:hover {
-  opacity: .2;
-}*/
-
 
 input {
   position: relative;
