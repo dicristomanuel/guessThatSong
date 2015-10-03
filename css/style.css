@@ -131,11 +131,12 @@ div.count {
 }
 
 input {
-  width: 80%;
+  width: 25vw;
+  height: 2vw;
   padding: 15px 10px;
   border-radius: 20px;
   outline: none;
-  font-size: 20px;
+  font-size: 1.3vw;
   text-align: center;
   background: rgba(255,255,255,.1);
   -webkit-box-shadow: -1px 11px 21px -12px rgba(0,0,0,0.75);
@@ -147,26 +148,22 @@ input {
 
 ::-webkit-input-placeholder {
    color: rgb(210, 210, 210);
-   font-size: 1.5vw;
-   font-weight: 300;
+   font-size: 1vw;
 }
 
 :-moz-placeholder { /* Firefox 18- */
    color: rgb(210, 210, 210);
-   font-size: 1.5vw;
-   font-weight: 300;
+   font-size: .5vw;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
    color: rgb(210, 210, 210);
-   font-size: 1.5vw;
-   font-weight: 300;
+   font-size: .5vw;
 }
 
 :-ms-input-placeholder {
    color: rgb(210, 210, 210);
-   font-size: 1.5vw;
-   font-weight: 300;
+   font-size: .5vw;
 }
 
 line {
