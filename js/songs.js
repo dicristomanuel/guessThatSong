@@ -57,21 +57,18 @@ function playSong() {
 				$(".album").click(function() {
           clearInterval(pulse);
 					$(this).addClass("animated pulse");
-          $('press-play').html("");
-					playSong();
 					setTimeout(function() {
 								$(".album").removeClass("animated pulse");
 							},600);
+              if(firstRound) {
+                playSong();
+              }
 				});
 
 $("input").on('keypress', function(evt) {
   var key = evt.which;
     if (key === 13) {
     	var userInput = $(this).val();
-
-    	if(songIds.length === 0) {
-    		//YOUR SCORE IS // GAME END
-    	}
 
      	$.ajax({
 	   url: current,
