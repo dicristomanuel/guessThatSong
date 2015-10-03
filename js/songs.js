@@ -69,7 +69,7 @@ $("input").on('keypress', function(evt) {
 								$(".artist").html(artistName);
 
 		var urlLastFm = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=82bb5e61b53c9b302c8c33bb41cf822e&artist=" + artistName + "&track=" + trackName + "&format=json";
-
+console.log(urlLastFm);
 								$.ajax({
 	   url: urlLastFm,
 	   jsonp: "callback",
