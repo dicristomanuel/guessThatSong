@@ -2,19 +2,14 @@
 
 ![alt text](https://github.com/dicristomanuel/guessThatSong/blob/master/img/screenshot1.png "Logo Title Text 1")
 
-This is a fun and entertaining memory game where the user is required to find the pair of cards that
-matches together. No mistakes are allowed, everytime you won't find the right match the game will have to start all over  
+Simple, stylish itunes music guessing game with some of my favorite tracks.
 
-*This is one of the first project I've created at Galvanize EDU after learning to manipulate the DOM with* **Vanilla Javascript** *(no jQuery involved)*
+*This is one of the first project I've created at Galvanize EDU after learning to make api calls*
 
 ![alt text](https://github.com/dicristomanuel/guessThatSong/blob/master/img/screenshot2.png "Logo Title Text 1")
 
-To implement:
-
-- new levels where the grid becomes smaller and smaller
-- live game with a second player
-- mobile version where the user will be shown every single card and will have to repeat the exact order
+The app uses the awesome and intuitive iTunes API to get artist and track info together with the audio preview. Unfortunately iTunes doesn't return good quality album pictures so in order to display them I used the audioscrobbler API.
 
 #### ENJOY!
 
-http://dicristomanuel.github.io/memorygame/
+http://dicristomanuel.github.io/guessThatSong/
