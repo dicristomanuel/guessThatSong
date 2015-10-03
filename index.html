@@ -4,23 +4,28 @@
   <meta char="UTF-8">
    <link rel="stylesheet" href="css/style.css">
   	<link rel="stylesheet" href="css/animate.css">
-  
-  <title>Guess that Song</title>
+
+  <title>GuessThatSong</title>
 </head>
 <body>
 
-
-<div class="count">0</div>
-
 <div class='cover'></div>
-<div class='protection'></div>
-<div class='player'>
-  <div class='album'></div>
-  <hr>
-  <div class='track'></div>
-  <div class='artist'></div>
-  <div class="ofInput"></div><input type="text" placeholder="Guess that Song">
-  <hr>
+<div class="main-container">
+  <div class="score">
+    <p>YOUR SCORE IS <score style="font-weight:bold"><score></p>
+      <play-again>play again</play-again>
+  </div>
+  <div class="music-container">
+    <div class="count"><p>0</p></div>
+    <div class='player'>
+      <div class='album'></div>
+      <line></line>
+      <div class='track'></div>
+      <div class='artist'></div>
+      <input type="text" class="input" placeholder="Guess that Song">
+      <line style="margin-top:2vw"></line>
+    </div>
+  </div>
 </div>
 
 <audio id="preview" src=""></audio>
@@ -28,5 +33,7 @@
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   	<script type="text/javascript" src="js/songs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
 	</body>
 </html>
