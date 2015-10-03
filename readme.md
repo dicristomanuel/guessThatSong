@@ -10,6 +10,8 @@ Simple, stylish itunes music guessing game with some of my favorite tracks.
 
 The app uses the awesome and intuitive iTunes API to get artist and track info together with the audio preview. Unfortunately iTunes doesn't return good quality album pictures so in order to display them I used the audioscrobbler API.
 
+- press enter if you don't know the name of the song - ;) 
+
 #### ENJOY!
 
 http://dicristomanuel.github.io/guessThatSong/
